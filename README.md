@@ -1,19 +1,21 @@
-Reeeh
+<h2>Reeeh</h2>
 
 Simple, Fast & easy PHP Framework
 
-How to get started?
+<h3>How to get started?</h3>
 
-Download the framework then put inside your server folder like htdocs or other.
+<ul>
+<li>Download the framework then put inside your server folder like htdocs or other.</li>
 
-Then you have to rename the folder on reeeh or any your application name.
+</li>Then you have to rename the folder on reeeh or any your application name.</li>
 
-edit the htaccess "rewriteBase /reeeh/"
+</li>Edit the htaccess "rewriteBase /reeeh/"</li>
 
-you have to configure the framework initilize file.
+</li>You have to configure the framework initilize file.</li>
 
-create a Database called reeeh or your application name.
-
-You have to create table users and database then you can start use the framework.
-
- CREATE TABLE `users` ( `id` int(11) NOT NULL AUTO_INCREMENT, `email` varchar(150) CHARACTER SET utf8 NOT NULL, `password` varchar(200) CHARACTER SET utf8 NOT NULL, `passwordsalt` varchar(200) CHARACTER SET utf8 NOT NULL, `fullname` varchar(50) CHARACTER SET utf8 NOT NULL, `first_name` varchar(150) CHARACTER SET utf8 NOT NULL, `last_name` varchar(150) CHARACTER SET utf8 NOT NULL, `phone` varchar(20) CHARACTER SET utf8 NOT NULL, `description` varchar(500) CHARACTER SET utf8 NOT NULL, `cdate` datetime NOT NULL, `cby` int(11) NOT NULL, `udate` datetime NOT NULL, `uby` int(11) NOT NULL, PRIMARY KEY (id) ) ENGINE=InnoDB DEFAULT CHARSET=utf8; 
+</li>Create a Database called reeeh or your application name.</li>
+<ul>
+<p>You have to create table users and database then you can start use the framework.</p>
+<code>
+CREATE TABLE `users` ( `id` int(11) NOT NULL AUTO_INCREMENT, `email` varchar(150) CHARACTER SET utf8 NOT NULL, `password` varchar(200) CHARACTER SET utf8 NOT NULL, `passwordsalt` varchar(200) CHARACTER SET utf8 NOT NULL, `fullname` varchar(50) CHARACTER SET utf8 NOT NULL, `first_name` varchar(150) CHARACTER SET utf8 NOT NULL, `last_name` varchar(150) CHARACTER SET utf8 NOT NULL, `phone` varchar(20) CHARACTER SET utf8 NOT NULL, `description` varchar(500) CHARACTER SET utf8 NOT NULL, `cdate` datetime NOT NULL, `cby` int(11) NOT NULL, `udate` datetime NOT NULL, `uby` int(11) NOT NULL, PRIMARY KEY (id) ) ENGINE=InnoDB DEFAULT CHARSET=utf8; 
+</code>
