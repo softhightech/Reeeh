@@ -170,7 +170,6 @@ class FORMS
 					$this->Class = $this->Key[3];
 					$this->ID = $this->Key[4];
 					$this->TAB = $this->Key[5];
-					//$this->DISABLED = $this->Key[6];
 					if(isset($this->Key[6])){
 						$this->DISABLED = 'disabled="disabled"';
 					}else{

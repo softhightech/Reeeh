@@ -15,7 +15,7 @@ function getFile($filename)
         require_once($filename);
     }
     else{
-        echo '<br>Fichier introuvable : '.$filename;
+        echo '<div class="alert alert-warning" role="alert">File not found : '.$filename.'</div>';
     }
 }
 

@@ -8,7 +8,7 @@ if(isset($_POST['FID']) && isset($_POST['IDV']) && isset($_POST['table'])){
             require_once '../../includes/Classes/Config/Config.class.php';
             require_once '../../includes/Classes/Security/RegX.class.php';
 	}else{
-            die('Erreur d\'include de l\'un des fichiers');
+            die('<div class="alert alert-warning" role="alert">Can\'t include some files on file '.__FILE__.' and line : '.__LINE__.'</div>);
 	}
 	
 	$Security = new RegX;
