@@ -28,4 +28,4 @@ CREATE TABLE `users` ( `id` int(11) NOT NULL AUTO_INCREMENT, `email` varchar(150
 Check documentation here : <a href="https://github.com/softhightech/Reeeh/wiki">Reeeh Wiki</a>
 
 <h3>Get involved</h3>
-If you are interested about developing the framework contact me on facebook : <a href="fb.com/brahim.moullablad">fb.com/brahim.moullablad</a> or send me an email : b.moullablad@gmail.com
+If you are interested about developing the framework contact me on facebook : <a href="http://fb.com/brahim.moullablad">fb.com/brahim.moullablad</a> or send me an email : b.moullablad@gmail.com
