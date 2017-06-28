@@ -17,7 +17,7 @@ Simple, Fast & easy PHP Framework
 <ul>
 
 
-<p>You have to create table users and database then you can start use the framework.</p>
+You have to create table users and database then you can start use the framework.
 
 
 <code>
