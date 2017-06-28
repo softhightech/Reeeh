@@ -14,7 +14,7 @@ Simple, Fast & easy PHP Framework
 <li>You have to configure the framework initilize file.</li>
 
 <li>Create a Database called reeeh or your application name.</li>
-<ul>
+</ul>
 
 
 You have to create table users and database then you can start use the framework.
