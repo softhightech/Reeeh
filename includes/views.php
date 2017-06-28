@@ -1,5 +1,4 @@
 <?php
-//
 if(isset($_GET['Module']))
 {  
     $Module = $_GET['Module'];
@@ -18,11 +17,6 @@ function getFile($filename)
         echo '<div class="alert alert-warning" role="alert">File not found : '.$filename.'</div>';
     }
 }
-
-
-
-//home page
-//var_dump($Module);
 
 $Allowed_modules = array('Subscribe','Logout','Contact','Privacy','Login','Connect','CGV','FPWD','FPWDS');
 if(isset($Module) && in_array($Module,$Allowed_modules))
@@ -44,11 +38,6 @@ if(isset($Module) && in_array($Module,$Allowed_modules))
 }
 
 
-
-
-
-
-
 if(isset($_GET['Module']) && $_GET['Module'] != 'Ajax')
 {
     require_once 'public/header/header.php';
@@ -66,12 +55,6 @@ if(isset($_GET['Module']) && $_GET['Module'] != 'Ajax')
     echo trim(str_replace('../','',$File));
     die();
 }
-
-
-
-
-
-
 if(isset($Module) && $Module != '')
 {
     $module = strtolower($Module);
