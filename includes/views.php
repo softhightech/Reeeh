@@ -76,9 +76,7 @@ if(isset($Module) && $Module != '')
 {
     $module = strtolower($Module);
     $modules_parrents = array(
-        'products'=>array('tags','categories','compatibility','scategories','status','documentation','products','options_group','options'),
-        'general'=>array('countries','home','cities','menu','app','languages','colors','menu_position','menu_type','page_category','pages'),
-        'users'=>array('collections','deposit','users'),
+        'users'=>array('users'),
     );
     foreach($modules_parrents as $mp=>$mpk)
     {
