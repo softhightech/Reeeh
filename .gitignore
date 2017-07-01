@@ -1,8 +1,8 @@
 # Project files #
 #################
-.htaccess
-includes/classes/db/dbo.class.php
-includes/initialize.php
+/.htaccess
+/includes/classes/db/db.class.php
+/includes/initialize.php
 
 
 
@@ -42,3 +42,4 @@ includes/initialize.php
 .Trashes
 ehthumbs.db
 Thumbs.db
+
