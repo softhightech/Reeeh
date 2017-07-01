@@ -59,7 +59,7 @@ if(isset($Module) && $Module != '')
 {
     $module = strtolower($Module);
     $modules_parrents = array(
-        'users'=>array('users'),
+        'users'=>array('users')
     );
     foreach($modules_parrents as $mp=>$mpk)
     {
