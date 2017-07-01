@@ -10,10 +10,6 @@
 	define('Plugins',$_SERVER["DOCUMENT_ROOT"].'/includes/plugins/');
 	define('WebSite','http://'.$_SERVER['HTTP_HOST'].DS.WSDIR.DS);
 	#Database
-	define('DBserver', 'localhost');
-	define('DBuser', 'root');
-	define('DBpwd', '');
-	define('DB', 'reeeh');
 
 	
 	//define("DEF_DIR", "");
