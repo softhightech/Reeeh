@@ -4,9 +4,9 @@ $Args = array(
 	'From' => array('users order by id desc'),
 	'Where' => array(),
 	'Join' => array(),
-	'Module'=> array('Users','Gestion des utilisateurs'),
+	'Module'=> array('Users','Manage users'),
 	'Operations' => array('edit','delete'),
-	'THead' => array('ID', 'Email', 'Nom', 'Prénom', 'Téléphone', 'Operations'),
+	'THead' => array('ID', 'Email', 'First name', 'Last name', 'Phone', 'Operations'),
 	'Files' => array(),
 	'Butons' =>	array(
 					array('Ajouter countries','?Module=Countries&Action=Add','add_nw','add button','Ajouter countries','facebox','iconAdd')
