@@ -1,2 +1,3 @@
 .htaccess
 includes/classes/db/dbo.class.php
+includes/initialize.php

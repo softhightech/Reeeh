@@ -70,7 +70,7 @@ function Add()
                         array('DIVSTART','','form-group'),
                             array('DIVSTART','','col-sm-offset-2 col-sm-5'),
                                 array('BUTTON','Ajouter','send','btn btn-default','send'),
-                                array('CBUTTON','Fermer','close',"btn btn-default","close","$('#facebox').fadeOut();$('#overlay').fadeOut();"),
+                                array('CBUTTON','Fermer','close',"btn btn-default","close","window.history.back()"),
                             array('DIVEND'),
                             
                         array('DIVEND'),
@@ -167,7 +167,7 @@ function EDIT($ID)
         array('DIVSTART','','form-group'),
             array('DIVSTART','','col-sm-offset-2 col-sm-5'),
                 array('BUTTON','Modifier','send','btn btn-default','send'),
-                array('CBUTTON','Fermer','close',"btn btn-default","close","$('#facebox').fadeOut();$('#overlay').fadeOut();"),
+                array('CBUTTON','Fermer','close',"btn btn-default","close","window.history.back()"),
             array('DIVEND'),
                         
         array('DIVEND'),
@@ -185,14 +185,16 @@ function EDIT($ID)
 function PEDIT()
 {
     $Post = array();
-    array_push($Post,array('users'/*table*/));
-    //hidden
-    array_push($Post,array('W'/*where*/,'id'/*field id*/,'ID'/*property id*/));
-    array_push($Post,array('email'/*name field*/,'email'/*name post*/,'text'/*type verification*/,'45'/*size post*/));
-    array_push($Post,array('first_name'/*name field*/,'first_name'/*name post*/,'text'/*type verification*/,'45'/*size post*/));
-    array_push($Post,array('last_name'/*name field*/,'last_name'/*name post*/,'text'/*type verification*/,'45'/*size post*/));
-    array_push($Post,array('phone'/*name field*/,'phone'/*name post*/,'text'/*type verification*/,'45'/*size post*/));
-    array_push($Post,array('description'/*name field*/,'description'/*name post*/,'text'/*type verification*/,'250'/*size post*/));
+    array_push(
+        array('users'/*table*/),
+        array('W'/*where*/,'id'/*field id*/,'ID'/*property id*/),
+        array('email'/*name field*/,'email'/*name post*/,'text'/*type verification*/,'45'/*size post*/),
+        array('first_name'/*name field*/,'first_name'/*name post*/,'text'/*type verification*/,'45'/*size post*/),
+        array('last_name'/*name field*/,'last_name'/*name post*/,'text'/*type verification*/,'45'/*size post*/),
+        array('phone'/*name field*/,'phone'/*name post*/,'text'/*type verification*/,'45'/*size post*/),
+        array('description'/*name field*/,'description'/*name post*/,'text'/*type verification*/,'250'/*size post*/),
+    );
+
     return $Post;
 }
 ?>
