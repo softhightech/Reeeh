@@ -65,7 +65,11 @@ class Tables
             //}
             
             "fnDrawCallback":function(){
-                $("div.dataTables_filter").append('<a href="<?php echo WebSite.$MODULE;?>/Add" class="btn btn-default" title="Add">Add</a>');
+                if($("div.dataTables_filter").find('.btn').length == 0)
+                {
+                    $("div.dataTables_filter").append('<a href="<?php echo WebSite.$MODULE;?>/Add" class="btn btn-default" title="Add">Add</a>');
+                }
+                
             }//fin fnDrowCallback*/
         });//fin plugin datatable
     });//fin instance jquery
