@@ -1,6 +1,3 @@
-
-
-
 <?php
 class Tables
 {
@@ -54,23 +51,21 @@ class Tables
         var DeleteOperation = new Array();
         var EditOperation = new Array();
         var Table = $(".datatables").dataTable({
-            
+            /*
             "sPaginationType": "full_numbers",
             "iDisplayLength": 25,
             "dom": '<"toolbar">frtip',
             "aLengthMenu": [[25, 50, 100, -1], [25, 50, 100, "All"]],
+            "oLanguage": {
             "sSearch": "",
-            
+            */
     
             "columns" : [<?php echo $HEADERTABLE; ?>],
             "data" : [<?php self::GET_DATA($Args); ?>],
             //}
             
             "fnDrawCallback":function(){
-                if($("div.dataTables_filter").find('.btn').length < 1)
-                {
-                    $("div.dataTables_filter").append('<a href="<?php echo WebSite.$MODULE;?>/Add" class="btn btn-default" title="Add">Add</a>');    
-                }
+                $("div.dataTables_filter").append('<a href="<?php echo WebSite.$MODULE;?>/Add" class="btn btn-default" title="Add">Add</a>');
             }//fin fnDrowCallback*/
         });//fin plugin datatable
     });//fin instance jquery
@@ -351,4 +346,3 @@ class Tables
    
 }
 ?>
-
