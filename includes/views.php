@@ -38,11 +38,15 @@ if(isset($Module) && in_array($Module,$Allowed_modules))
 }
 
 
-if(isset($_GET['Module']) && $_GET['Module'] != 'Ajax')
+if(isset($_GET['Module']) && $_GET['Module'] != 'Ajax' && !isset($_FILES['File']))
 {
     require_once 'public/header/header.php';
     require_once 'public/menu/menu.php';
-}else{
+}
+
+
+if(isset($_FILES['File']))
+{
     $DIR = $_POST['Dir'];
     $FILE = $_FILES['File'];
     if(!(is_dir($DIR)))
@@ -55,11 +59,17 @@ if(isset($_GET['Module']) && $_GET['Module'] != 'Ajax')
     echo trim(str_replace('../','',$File));
     die();
 }
+
+
 if(isset($Module) && $Module != '')
 {
     $module = strtolower($Module);
     $modules_parrents = array(
         'users'=>array('users'),
+        'annonces'=>array('annonces'),
+        'villes'=>array('villes'),
+        'categories'=>array('categories'),
+        
     );
     foreach($modules_parrents as $mp=>$mpk)
     {
