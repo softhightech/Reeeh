@@ -1,3 +1,6 @@
+
+
+
 <?php
 class Tables
 {
@@ -65,11 +68,7 @@ class Tables
             //}
             
             "fnDrawCallback":function(){
-                if($("div.dataTables_filter").find('.btn').length == 0)
-                {
-                    $("div.dataTables_filter").append('<a href="<?php echo WebSite.$MODULE;?>/Add" class="btn btn-default" title="Add">Add</a>');
-                }
-                
+                $("div.dataTables_filter").append('<a href="<?php echo WebSite.$MODULE;?>/Add" class="btn btn-default" title="Add">Add</a>');
             }//fin fnDrowCallback*/
         });//fin plugin datatable
     });//fin instance jquery
@@ -294,24 +293,29 @@ class Tables
                 }elseif($f == 'hexa' ){  
                     $sOutput .= '"<font style=\"color:#'.$aRow["$f"].'\">'.$aRow["$f"].'</font>",';                               
                 }elseif(strstr($f ,'picture') || strstr($f ,'file')){
-                                    if(file_exists($aRow[$f]))
-                                    {
-                                        //echo substr($aRow[$f],-4);
-                                        switch (substr($aRow[$f],-4))
-                                        {
-                                            case '.pdf' : $sOutput .= '"<a href=\"'.$aRow[$f].'\" target=\"_blank\" title=\"Fichier de format pdf\"><img class=\"link\" src=\"images/pdf32.png\"></a>",';
-                                                break;
-                                            case '.jpg' : $sOutput .= '"<a href=\"'.$aRow[$f].'\" target=\"_blank\" title=\"Fichier de format jpg\"><img class=\"link\" src=\"images/jpg32.png\"></a>",';
-                                                break;
-                                            case 'jpeg' : $sOutput .= '"<a href=\"'.$aRow[$f].'\" target=\"_blank\" title=\"Fichier de format jpg\"><img class=\"link\" src=\"images/jpg32.png\"></a>",';
-                                                break;
-                                            case '.png' : $sOutput .= '"<a href=\"'.$aRow[$f].'\" target=\"_blank\" title=\"Fichier de format jpg\"><img class=\"link\" src=\"images/jpg32.png\"></a>",';
-                                                break;
-                                            default : $sOutput .= '"<a href=\"'.$aRow[$f].'\" target=\"_blank\" title=\"Telecharger le fichier">Telecharger</a>",';
-                                        }
-                                    }else{
-                                        $sOutput .= '"<img class=\"link\" src=\"images/fileerror.png\" title=\"Fichier introuvable\">",';
-                                    }
+                    if(file_exists($aRow[$f]))
+                    {
+                        //echo substr($aRow[$f],-4);
+                        switch (substr($aRow[$f],-4))
+                        {
+                            case '.pdf' : 
+                                $sOutput .= '"<a href=\"'.WebSite.$aRow[$f].'\" target=\"_blank\" title=\"Fichier de format pdf\"><img class=\"link\" src=\"'.WebSite.$aRow[$f].'\" width=\"50\"></a>",';
+                                break;
+                            case '.jpg' : 
+                                $sOutput .= '"<a href=\"'.WebSite.$aRow[$f].'\" target=\"_blank\" title=\"Fichier de format jpg\"><img class=\"link\" src=\"'.WebSite.$aRow[$f].'\" width=\"50\"></a>",';
+                                break;
+                            case 'jpeg' : 
+                                $sOutput .= '"<a href=\"'.WebSite.$aRow[$f].'\" target=\"_blank\" title=\"Fichier de format jpg\"><img class=\"link\" src=\"'.WebSite.$aRow[$f].'\" width=\"50\"></a>",';
+                                break;
+                            case '.png' : 
+                                $sOutput .= '"<a href=\"'.WebSite.$aRow[$f].'\" target=\"_blank\" title=\"Fichier de format jpg\"><img class=\"link\" src=\"images/jpg32.png\"></a>",';
+                                break;
+                            default : 
+                                $sOutput .= '"<a href=\"'.$aRow[$f].'\" target=\"_blank\" title=\"Telecharger le fichier">Telecharger</a>",';
+                        }
+                    }else{
+                        $sOutput .= '"<img class=\"link\" src=\"images/fileerror.png\" title=\"Fichier introuvable\">",';
+                    }
                                     
                 }elseif($f == 'order'){
                     if($count == 1){
@@ -350,3 +354,4 @@ class Tables
    
 }
 ?>
+
