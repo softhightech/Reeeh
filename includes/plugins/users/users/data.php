@@ -69,8 +69,8 @@ function Add()
 
                         array('DIVSTART','','form-group'),
                             array('DIVSTART','','col-sm-offset-2 col-sm-5'),
-                                array('BUTTON','Ajouter','send','btn btn-default','send'),
-                                array('CBUTTON','Fermer','close',"btn btn-default","close","window.history.back()"),
+                                array('BUTTON','Ajouter','send','btn btn-info','send'),
+                                array('CBUTTON','Fermer','close',"btn btn-danger","close","window.history.back()"),
                             array('DIVEND'),
                             
                         array('DIVEND'),
@@ -166,8 +166,8 @@ function EDIT($ID)
 
         array('DIVSTART','','form-group'),
             array('DIVSTART','','col-sm-offset-2 col-sm-5'),
-                array('BUTTON','Modifier','send','btn btn-default','send'),
-                array('CBUTTON','Fermer','close',"btn btn-default","close","window.history.back()"),
+                array('BUTTON','Modifier','send','btn btn-info','send'),
+                array('CBUTTON','Fermer','close',"btn btn-danger","close","window.history.back()"),
             array('DIVEND'),
                         
         array('DIVEND'),
