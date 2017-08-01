@@ -255,10 +255,7 @@ class DBO
 												
 						if($RegX->check_pwd($_POST[$this->Value[1]]) || $_POST[$this->Value[1]] == '')
 						{
-							$Salt = substr(md5(time()),0,10);
-							//die(md5($_POST[$this->Value[1]].$Salt));
-							$this->RSQL .=' \''.md5($_POST[$this->Value[1]].$Salt).'\',';	
-							$this->RSQL .=' \''.$Salt.'\',';													
+							$this->RSQL .=' \''.md5($_POST[$this->Value[1].$Salt]).'\',';													
 						}else
 						{
 							die('EV : PASSWORD error');
