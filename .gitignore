@@ -1,6 +1,7 @@
 # Project files #
 #################
 /.htaccess
+/includes/classes/db/db.class.php
 /includes/initialize.php
 
 
