@@ -9,7 +9,7 @@ $Args = array(
 	'THead' => array('ID', 'Email', 'First name', 'Last name', 'Phone', 'Operations'),
 	'Files' => array(),
 	'Buttons' =>	array(
-					array('New user','/Users/Add','add','btn btn-link','Add new user')
+					array('New user','Users/Add','add','btn btn-link','Add new user')
 				),
 	'UPLOADFIELDS' => array()
 	);
