@@ -938,7 +938,7 @@ class FORMS
                     $this->Class = $this->Key[4];
                     $this->ID = $this->Key[5];
                     
-                    echo '<INPUT TYPE="text" name="'.$this->Name.'" class="'.$this->Class.'" id="'.$this->ID.'" maxlength="'.$this->Size.'" value="" placeholder="Changer le mot de passe actuel">';
+                    echo '<INPUT TYPE="text" name="'.$this->Name.'" class="'.$this->Class.'" id="'.$this->ID.'" maxlength="'.$this->Size.'">';
                     $this->Script .= "var ".$this->ID." = $('#".$this->ID."').val();\n"; 
                     $this->Post .= $this->ID.':'.$this->ID.',';
                 }
