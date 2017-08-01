@@ -1,11 +1,25 @@
+
 <?php
 if(isset($_GET['Module']))
 {  
-    $Module = $_GET['Module'];
+     $Module = $_GET['Module'];
+     if(isset($_GET['ID']) && $_GET['ID']=='export'){
+        $parent_folder= $Module;
+        switch($Module){
+            case 'rp' ;
+            case 'rp_details';
+            $parent_folder='products';
+            break;
+            case 'Shipping_Employees':$parent_folder='shipping';
+            break;
+            case 'shops_employees':$parent_folder='shops';
+        }
+        require'ws/csv.php';
+            exit();
+            }  
 }else{
     $Module = '';
 }
-
 $Users = new user();
 function getFile($filename)
 {
@@ -66,10 +80,6 @@ if(isset($Module) && $Module != '')
     $module = strtolower($Module);
     $modules_parrents = array(
         'users'=>array('users'),
-        'annonces'=>array('annonces'),
-        'villes'=>array('villes'),
-        'categories'=>array('categories'),
-        
     );
     foreach($modules_parrents as $mp=>$mpk)
     {
@@ -100,7 +110,11 @@ if(isset($Module) && $Module != '')
             }
         }
     }else{
-        getFile('includes/plugins/'.$parent_folder.'/'.strtolower($module).'/list.php');
+        if(isset($parent_folder))
+        {
+            getFile('includes/plugins/'.$parent_folder.'/'.strtolower($module).'/list.php');    
+        }else
+       getFile('includes/plugins/'.strtolower($module).'/list.php'); 
     }
 }
 else{

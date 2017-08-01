@@ -374,7 +374,6 @@ function Connected()
     {
         if((isset($_GET['Module']) && $_GET['Module'] != 'Login') || !isset($_GET['Module']))
         {
-            //die(WebSite);
             header("location:".WebSite.'Login');
         }
     }else{

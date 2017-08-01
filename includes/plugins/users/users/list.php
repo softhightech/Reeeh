@@ -8,8 +8,8 @@ $Args = array(
 	'Operations' => array('edit','delete'),
 	'THead' => array('ID', 'Email', 'First name', 'Last name', 'Phone', 'Operations'),
 	'Files' => array(),
-	'Butons' =>	array(
-					array('Ajouter countries','?Module=Countries&Action=Add','add_nw','add button','Ajouter countries','facebox','iconAdd')
+	'Buttons' =>	array(
+					array('New user','/Users/Add','add','btn btn-link','Add new user')
 				),
 	'UPLOADFIELDS' => array()
 	);

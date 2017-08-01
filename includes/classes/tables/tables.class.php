@@ -1,6 +1,3 @@
-
-
-
 <?php
 class Tables
 {
@@ -54,42 +51,40 @@ class Tables
         var DeleteOperation = new Array();
         var EditOperation = new Array();
         var Table = $(".datatables").dataTable({
-            /*
-            "sPaginationType": "full_numbers",
-            "iDisplayLength": 25,
-            "dom": '<"toolbar">frtip',
-            "aLengthMenu": [[25, 50, 100, -1], [25, 50, 100, "All"]],
-            "oLanguage": {
-            "sSearch": "",
-            */
     
             "columns" : [<?php echo $HEADERTABLE; ?>],
-            "data" : [<?php self::GET_DATA($Args); ?>],
-            //}
-            
+            "data" : [<?php self::GET_DATA($Args); ?>],            
             "fnDrawCallback":function(){
                 if($("div.dataTables_filter").find('.btn').length == 0)
                 {
-                    $("div.dataTables_filter").append('<a href="<?php echo WebSite.$MODULE;?>/Add" class="btn btn-default" title="Add">Add</a>');
+                    <?php
+                    if(isset($Args['Buttons']))
+                    {
+                        foreach ($Args['Buttons'] as $key => $value) {
+                            $btnTitle = $value[0];
+                            $btnLink = $value[1];
+                            $btnId = $value[2];
+                            $btnClass = $value[3];
+                            $btnTip = $value[4];
+                            echo '$("div.dataTables_filter").append("<a href=\"'.$btnLink.'\" id=\"'.$btnId.'\" class=\"'.$btnClass.'\" title=\"'.$btnTip.'\">'.$btnTitle.'</a>");'."\n";
+                        }
+                    }
+                    
+                    ?>
                 }
             }//fin fnDrowCallback*/
         });//fin plugin datatable
     });//fin instance jquery
     </script>
-    <style>
-    #tpanel{
-        float:left;
-        margin-top:20px;
-        width:880px;
-    }
-    </style>
-    <?php 
-    if(isset($TITLE) || isset($ALink))
+
+
+    <?php
+    if(isset($Args['Title']))
     {
     ?>
-    <div id="tpanel">
-        <h4><?php if(isset($TITLE)){echo $TITLE;}?></h4>   
-    </div>
+    <legend>
+        <h4><?php echo $Args['Title'];?></h4>   
+    </legend>
     <?php 
     }
     ?>
@@ -198,7 +193,7 @@ class Tables
             if(!($rResult = $DB->Query($sQuery)))
             {
                     echo $sQuery;
-                    die('Request Error');
+                    // die('Request Error');
             }
             $sQuery = "SELECT FOUND_ROWS()";
             $rResultFilterTotal = $DB->Query( $sQuery);
@@ -357,4 +352,3 @@ class Tables
    
 }
 ?>
-

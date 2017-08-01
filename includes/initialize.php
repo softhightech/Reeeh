@@ -1,6 +1,4 @@
-<?php 
-
-
+<?php
 	//you need to create file called defines and put this defined values in it
 	define('APP','Reeeh');
 	define('DS','/');
@@ -11,8 +9,8 @@
 	define('WebSite','http://'.$_SERVER['HTTP_HOST'].DS.WSDIR.DS);
 	#Database
 
-	
-	//define("DEF_DIR", "");
+
+	//class db
 	require 'classes/db/db.class.php';
     //class de cummon
 	require 'classes/commun/commun.class.php';
@@ -34,6 +32,6 @@
         //class de securite
 	require 'classes/net/uploads/uploads.class.php';
     //our controller
-    require 'controller.php';
+    require 'controller.php';   
         
 ?>

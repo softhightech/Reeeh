@@ -101,7 +101,7 @@ class user
             $password = md5($password);
             try
             {
-                $query = "SELECT id_user as id FROM users WHERE email = '$email' AND password = '$password'";
+                $query = "SELECT id FROM users WHERE email = '$email' AND password = '$password'";
                 if($res = $DB->query($query))
                 {
                     if($res->rowCount() > 0)

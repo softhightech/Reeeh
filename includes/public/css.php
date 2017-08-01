@@ -1,26 +1,8 @@
-<link rel="stylesheet" href="css/style.css" type="text/css">
-<link rel="stylesheet" href="css/featured_friends.css" type="text/css">
-<link rel="stylesheet" href="css/followed.css" type="text/css">
-<link rel="stylesheet" href="css/header.css" type="text/css">
-<link rel="stylesheet" href="css/post.css" type="text/css">
-<link rel="stylesheet" href="css/posts.css" type="text/css">
-<link rel="stylesheet" href="css/right-chat.css" type="text/css">
-
-
-
-
-<link rel="stylesheet" href="css/jquery.fileupload-ui.css" type="text/css">
-<link rel="stylesheet" href="css/articles.css" type="text/css">
-
-<!-- loading -->
-
-<link href='css/loading/support/style.css' rel='stylesheet' />
-<link href='css/loading/nprogress.css' rel='stylesheet' />
-
-<link href='js/facebox/facebox.css' rel='stylesheet' />
-
-<!--script src='css/loading/vendor/jquery-1.10.js'></script-->
-<script src='css/loading/nprogress.js'></script>
+<!--  mychange ++ -->
+<link href="<?php echo WebSite;?>assets/css/bootstrap.min.css" rel="stylesheet">
+<link href="<?php echo WebSite;?>assets/css/dataTables.bootstrap.css" rel="stylesheet">
+<link href="<?php echo WebSite;?>assets/css/custom_menu.css" rel="stylesheet">
+<!--  end ++ -->
 
 
 
@@ -85,5 +67,21 @@
 #users-notification
 {
     display: none;
+}
+
+#link-btn {
+        margin-top: 27px;
+}
+#br_fix {
+    border-top: 2px solid black;
+    padding-top: 3px;
+}
+.padding-0{
+    padding-right:3px;
+    padding-left:3px;
+}
+.line {
+    vertical-align:top;
+    margin-bottom: 1px;
 }
 </style>

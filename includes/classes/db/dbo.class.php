@@ -1,23 +1,6 @@
 <?php
-/*
-$session = new Session();
-if(file_exists('../../includes/Classes/Config/Config.class.php'))
-{
-    require_once '../../includes/Classes/Config/Config.class.php';
-}else{
-    die('File not found ../../includes/Classes/Config/Config.class.php at '.__file__.__line__);
-}
-*/
-/*
-if(!$session->getSession('Company'))
-{
-	header('Location:../../login.php');
-	exit();
-}
-*/
 class DBO
 {
-	
 	public $POST;
 	public $Key;
 	Public $Value;
@@ -30,20 +13,8 @@ class DBO
 	
 	public function INSERT($Data)
 	{
-		/*
-		if(!file_exists('../../includes/Classes/Config/Config.class.php'))
-		{
-			die('File not found file '.__file__.' At line : '.__line__);
-		}*/
 		require_once('../../../includes/initialize.php');
-		//require_once('../../includes/Classes/Security/RegX.class.php');
-		//require_once('../../functions/Cryptography.fn.php');
-
-
-
 		$RegX = new Security();
-		//$Config = new Config();
-
 		$this->Count = 0;
 		$this->POST = $Data;
 		foreach($this->POST as $this->Key=>$this->Value)
@@ -67,9 +38,11 @@ class DBO
 						}
 						$this->LSQL .= ' `'.$this->Value[0].'`,';						
 					}
+					/*
 					if(strtoupper($this->Value[4]) == strtoupper('password')){
 						$this->LSQL .= ' `passwordsalt`,';						
-					}													
+					}		
+					*/											
 					$this->SecMethode = strtoupper($this->Value[4]);					
 					switch($this->SecMethode)
 					{
@@ -86,22 +59,22 @@ class DBO
 						case 'TIME' : 							
 						if($RegX->check_time($_POST[$this->Value[1]]))
 						{
-                                                    $this->RSQL .=' \''.$_POST[$this->Value[1]].'\',';
+                            $this->RSQL .=' \''.$_POST[$this->Value[1]].'\',';
 						}else
 						{
-                                                    die('NE : Time error');
+                            die('NE : Time error');
 						}
 						break;						
 						case 'EMAIL' :
 						if(!empty($_POST[$this->Value[1]]))
 						{						
-                                                    if($RegX->check_email($_POST[$this->Value[1]]))
-                                                    {
-                                                        $this->RSQL .=' \''.$_POST[$this->Value[1]].'\',';
-                                                    }else
-                                                    {
-                                                        die('NE : Email error');
-                                                    }
+                            if($RegX->check_email($_POST[$this->Value[1]]))
+                            {
+                                $this->RSQL .=' \''.$_POST[$this->Value[1]].'\',';
+                            }else
+                            {
+                                die('NE : Email error');
+                            }
 						}else{
 							$this->RSQL .=' \'\',';
 						}
@@ -255,7 +228,7 @@ class DBO
 												
 						if($RegX->check_pwd($_POST[$this->Value[1]]) || $_POST[$this->Value[1]] == '')
 						{
-							$this->RSQL .=' \''.md5($_POST[$this->Value[1].$Salt]).'\',';													
+							$this->RSQL .=' \''.md5($_POST[$this->Value[1]]).'\',';												
 						}else
 						{
 							die('EV : PASSWORD error');
@@ -329,15 +302,8 @@ class DBO
 	//////////////////////////////////////////////update
 	public function UPDATE($Data)
 	{
-		/*
-		$session= new Session();
-		require_once('../../includes/Classes/Config/Config.class.php');
-		require_once('../../includes/Classes/Security/RegX.class.php');
-		require_once('../../functions/Cryptography.fn.php');
-		*/
 		require_once('../../../includes/initialize.php');
 		$RegX = new Security();
-
 		$this->Count = 0;
 		$this->POST = $Data;		
 		foreach($this->POST as $this->Key=>$this->Value)
@@ -477,27 +443,29 @@ class DBO
 							break;
 							
 							case 'PASSWORD';
-								if($RegX->check_pwd($_POST[$this->Value[1]])|| $_POST[$this->Value[1]]=='')
+								if($RegX->check_pwd($_POST[$this->Value[1]]) || $_POST[$this->Value[1]] == '')
 								{
-									$Salt = substr(md5(time()),0,10);
-									$Password = md5($_POST[$this->Value[1]].$Salt);
-									$this->RSQL .='`'.$this->Value[0].'`=\''.$Password.'\',';
-									$this->RSQL .='`'.$this->Value[0].'salt`=\''.$Salt.'\',';
-									unset($Password);
+									//i update the password only if contain something
+									if($_POST[$this->Value[1]] != '')
+									{
+										$Password = md5($_POST[$this->Value[1]]);
+										$this->RSQL .='`'.$this->Value[0].'`=\''.$Password.'\',';
+										unset($Password);
+									}
 								}else{
 									die('NE : Password error');
 								}
 							break;
 							/////Password_confirm
 							case 'PASSWORD_CONFIRM' : 
-							if($RegX->check_pwd($_POST[$this->Value[1]]))
+							if($RegX->check_pwd($_POST[$this->Value[1]]) )
 							{							
 								if($_POST[$this->Value[1]] != $_POST[$this->Value[0]]){	
-										die('EV : PASSWORD error');						
+										die('EV : PASSWORD confirm error');						
 								}
 							}else
 							{
-								die('EV : PASSWORD error');
+								die('EV : PASSWORD confirm error');
 							}						
 							break;																			
 						}
