@@ -16,56 +16,46 @@ function Add()
 
 
                         array('DIVSTART','','form-group'),
-                            array('LABEL','First name :'/*Text*/,'col-sm-2 control-label'/*class*/,''/*ID*/),
+                            array('LABEL','First name'/*Text*/,'col-sm-2 control-label'/*class*/,''/*ID*/),
                             array('DIVSTART','','col-sm-8'),
                                 array('TEXT','first_name','form-control','form-control','first_name','value','','first_name'),
                             array('DIVEND'),
                         array('DIVEND'),
 
                         array('DIVSTART','','form-group'),
-                            array('LABEL','Last name :'/*Text*/,'col-sm-2 control-label'/*class*/,''/*ID*/),
+                            array('LABEL','Last name'/*Text*/,'col-sm-2 control-label'/*class*/,''/*ID*/),
                             array('DIVSTART','','col-sm-8'),
                                 array('TEXT','last_name','form-control','form-control','last_name','value','','last_name'),
                             array('DIVEND'),
                         array('DIVEND'),
 
                         array('DIVSTART','','form-group'),
-                            array('LABEL','Password :'/*Text*/,'col-sm-2 control-label'/*class*/,''/*ID*/),
+                            array('LABEL','Password'/*Text*/,'col-sm-2 control-label'/*class*/,''/*ID*/),
                             array('DIVSTART','','col-sm-8'),
                                 array('PASSWORD','password','form-control','form-control','password','value','','password'),
                             array('DIVEND'),
                         array('DIVEND'),
 
                         array('DIVSTART','','form-group'),
-                            array('LABEL','Email :'/*Text*/,'col-sm-2 control-label'/*class*/,''/*ID*/),
+                            array('LABEL','Email'/*Text*/,'col-sm-2 control-label'/*class*/,''/*ID*/),
                             array('DIVSTART','','col-sm-8'),
                                 array('TEXT','email','form-control','form-control','email','value','','email'),
                             array('DIVEND'),
                         array('DIVEND'),
 
                         array('DIVSTART','','form-group'),
-                            array('LABEL','Phone :'/*Text*/,'col-sm-2 control-label'/*class*/,''/*ID*/),
+                            array('LABEL','Phone'/*Text*/,'col-sm-2 control-label'/*class*/,''/*ID*/),
                             array('DIVSTART','','col-sm-8'),
                                 array('TEXT','phone','form-control','form-control','phone','value','','phone'),
                             array('DIVEND'),
                         array('DIVEND'),
-
-
-
-
+                        
                         array('DIVSTART','','form-group'),
-                            array('LABEL','Description :'/*Text*/,'col-sm-2 control-label'/*class*/,''/*ID*/),
+                            array('LABEL','Description'/*Text*/,'col-sm-2 control-label'/*class*/,''/*ID*/),
                             array('DIVSTART','','col-sm-8'),
                                 array('TEXTAREA','description','4','form-control','description',''),
                             array('DIVEND'),
                         array('DIVEND'),
-
-
-
-
-
-
-      
 
                         array('DIVSTART','','form-group'),
                             array('DIVSTART','','col-sm-offset-2 col-sm-5'),
@@ -118,7 +108,7 @@ function EDIT($ID)
     //name
         //name
     array('DIVSTART','','form-group'),
-        array('LABEL',' Last name :'/*Text*/,'col-sm-2 control-label'/*class*/,''/*ID*/),
+        array('LABEL',' Last name'/*Text*/,'col-sm-2 control-label'/*class*/,''/*ID*/),
         array('DIVSTART','','col-sm-8'),
 
             array('TEXT','first_name'/*name field*/,'first_name'/*name post*/,'40'/*size post*/,'form-control'/*class*/,'first_name'/*id*/),
@@ -126,7 +116,7 @@ function EDIT($ID)
     array('DIVEND'),
 
     array('DIVSTART','','form-group'),
-        array('LABEL',' First name :'/*Text*/,'col-sm-2 control-label'/*class*/,''/*ID*/),
+        array('LABEL',' First name'/*Text*/,'col-sm-2 control-label'/*class*/,''/*ID*/),
         array('DIVSTART','','col-sm-8'),
 
             array('TEXT','last_name'/*name field*/,'last_name'/*name post*/,'40'/*size post*/,'form-control'/*class*/,'last_name'/*id*/),
@@ -134,18 +124,23 @@ function EDIT($ID)
     array('DIVEND'),
 
     array('DIVSTART','','form-group'),
-        array('LABEL',' User email :'/*Text*/,'col-sm-2 control-label'/*class*/,''/*ID*/),
+        array('LABEL',' Email'/*Text*/,'col-sm-2 control-label'/*class*/,''/*ID*/),
         array('DIVSTART','','col-sm-8'),
 
             array('TEXT','email'/*name field*/,'email'/*name post*/,'40'/*size post*/,'form-control'/*class*/,'email'/*id*/),
         array('DIVEND'),
     array('DIVEND'),
 
-
+    array('DIVSTART','','form-group'),
+        array('LABEL',' Password'/*Text*/,'col-sm-2 control-label'/*class*/,''/*ID*/),
+        array('DIVSTART','','col-sm-8'),
+            array('PASSWORD','password'/*name field*/,'password'/*name post*/,'40'/*size post*/,'form-control'/*class*/,'password'/*id*/),
+        array('DIVEND'),
+    array('DIVEND'),
 
 
     array('DIVSTART','','form-group'),
-        array('LABEL',' User phone :'/*Text*/,'col-sm-2 control-label'/*class*/,''/*ID*/),
+        array('LABEL','Phone'/*Text*/,'col-sm-2 control-label'/*class*/,''/*ID*/),
         array('DIVSTART','','col-sm-8'),
 
             array('TEXT','phone'/*name field*/,'phone'/*name post*/,'40'/*size post*/,'form-control'/*class*/,'phone'/*id*/),
@@ -155,7 +150,7 @@ function EDIT($ID)
 
 
     array('DIVSTART','','form-group'),
-        array('LABEL','Description :'/*Text*/,'col-sm-2 control-label'/*class*/,''/*ID*/),
+        array('LABEL','Description'/*Text*/,'col-sm-2 control-label'/*class*/,''/*ID*/),
             array('DIVSTART','','col-sm-8'),
                 array('TEXTAREA','description','description','4','form-control','description',''),
             array('DIVEND'),
@@ -188,6 +183,7 @@ function PEDIT()
         array('users'/*table*/),
         array('W'/*where*/,'id'/*field id*/,'ID'/*property id*/),
         array('email'/*name field*/,'email'/*name post*/,'text'/*type verification*/,'45'/*size post*/),
+        array('password','password','password','200','password'),
         array('first_name'/*name field*/,'first_name'/*name post*/,'text'/*type verification*/,'45'/*size post*/),
         array('last_name'/*name field*/,'last_name'/*name post*/,'text'/*type verification*/,'45'/*size post*/),
         array('phone'/*name field*/,'phone'/*name post*/,'text'/*type verification*/,'45'/*size post*/),

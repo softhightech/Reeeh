@@ -334,7 +334,7 @@ class Tables
                 $sOutput .= '"';
                 if(in_array('edit',$this->operations))
                 {
-                    $sOutput .= '<a rel=\"facebox\" href=\"'.$this->Module.'/Edit/'.$aRow[$this->FID].'\" class=\"btn btn-info btn-xs\" title=\"Editer\">Edit</a>';
+                    $sOutput .= '<a href=\"'.$this->Module.'/Edit/'.$aRow[$this->FID].'\" class=\"btn btn-info btn-xs\" title=\"Editer\">Edit</a>';
                 }
                 if(in_array('delete',$this->operations) || in_array('DELETE',$this->operations))
                 {
